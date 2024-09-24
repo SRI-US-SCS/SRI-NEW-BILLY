@@ -23,7 +23,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: docker://aquasec/aqua-scanner
         with:
-          args: trivy ${{ inputs.scan-type }} --scanners ${{ inputs.security-checks }} --severity ${{ inputs.severity }} --skip-update --package-json .
+          args: trivy ${{ inputs.scan-type }} --scanners ${{ inputs.security-checks }} --severity ${{ inputs.severity }}  --package-json .
         env:
           AQUA_KEY: "${{ secrets.aq_key }}"
           AQUA_SECRET: "${{ secrets.aq_secret }}"
