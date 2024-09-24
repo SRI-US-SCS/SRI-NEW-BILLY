@@ -1,5 +1,7 @@
 name: Build & Test
+
 on: [pull_request,push]
+
 jobs:
   aqua_scan:
     name: Aqua_Scan
