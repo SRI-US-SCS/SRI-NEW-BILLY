@@ -21,8 +21,8 @@ jobs:
         env:
           AQUA_KEY: ${{ secrets.AQUA_KEY }}
           AQUA_SECRET: ${{ secrets.AQUA_SECRET }}
-          TRIVY_USERNAME: ${{TRIVY_USERNAME}}
-          TRIVY_PASSWORD: ${{TRIVY_PASSWORD}}
+          TRIVY_USERNAME: ${{secrets.TRIVY_USERNAME}}
+          TRIVY_PASSWORD: ${{secrets.TRIVY_PASSWORD}}
           GITHUB_TOKEN: ${{ github.token }}
           AQUA_URL: https://api.supply-chain.cloud.aquasec.com
           TRIVY_DB_REPOSITORY: "public.ecr.aws/aquasecurity/trivy-db:latest"
