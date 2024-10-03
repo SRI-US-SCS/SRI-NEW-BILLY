@@ -25,7 +25,7 @@ jobs:
           TRIVY_PASSWORD: ${{secrets.TRIVY_PASSWORD}}
           GITHUB_TOKEN: ${{ github.token }}
           AQUA_URL: https://api.supply-chain.cloud.aquasec.com
-          TRIVY_DB_REPOSITORY: "public.ecr.aws/aquasecurity/trivy-db:latest"
+          ###### TRIVY_DB_REPOSITORY: "public.ecr.aws/aquasecurity/trivy-db:latest"
           CSPM_URL: https://api.cloudsploit.com
           TRIVY_RUN_AS_PLUGIN: 'aqua'
           
