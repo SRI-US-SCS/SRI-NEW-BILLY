@@ -26,6 +26,6 @@ jobs:
           TRIVY_DB_REPOSITORY: "public.ecr.aws/aquasecurity/trivy-db:latest"
           CSPM_URL: https://api.cloudsploit.com
           TRIVY_RUN_AS_PLUGIN: 'aqua'
-          TRIVY_USERNAME: ${{AQUA_ACR_USERNAME}}
-          TRIVY_PASSWORD: ${{AQUA_ACR_PASSWORD}}
+          TRIVY_USERNAME: ${{TRIVY_USERNAME}}
+          TRIVY_PASSWORD: ${{TRIVY_PASSWORD}}
           # For http/https proxyconfiguration add env vars: HTTP_PROXY/HTTPS_PROXY, CA-CRET (path to CA certificate)
