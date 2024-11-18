@@ -47,7 +47,7 @@ jobs:
           nohup python3 ./app.py &
       - name: Wait for server (sleep 5 secs)
         run: |
-          sleep 180
+          sleep 01
       - name: Run DVGA Tests
         run: |
           python3 -m pytest tests/*
@@ -76,4 +76,7 @@ jobs:
             --aqua-key "${{ secrets.AQUA_KEY }}" \
             --aqua-secret "${{ secrets.AQUA_SECRET }}" \
             --cspm-url https://api.cloudsploit.com \
-            --artifact-path knightfortheright/mytest:v3
+            --artifact-path knightfortheright/mytest:v3 \
+            --quiet \
+            --log-file billy.log \
+            --sbom-path SBOM
