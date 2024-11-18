@@ -76,7 +76,7 @@ jobs:
             --aqua-key "${{ secrets.AQUA_KEY }}" \
             --aqua-secret "${{ secrets.AQUA_SECRET }}" \
             --cspm-url https://api.cloudsploit.com \
-            --artifact-path knightfortheright/mytest:v3 \
+            --artifact-path knightfortheright/mytest:v4 \
             --quiet \
             --log-file billy.log \
             --sbom-path SBOM
