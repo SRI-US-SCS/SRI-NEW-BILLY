@@ -19,6 +19,8 @@ jobs:
           # To enable reachability scanning, add: --reachability
           # To enable npm/dotnet non-lock file scanning, add: --package-json / --dotnet-proj
         env:
+          TRIVY_USERNAME: ${{ secrets.TRIVY_USERNAME }}
+          TRIVY_PASSWORD: ${{ secrets.TRIVY_PASSWORD }}
           AQUA_KEY: ${{ secrets.AQUA_KEY }}
           AQUA_SECRET: ${{ secrets.AQUA_SECRET }}
           GITHUB_TOKEN: ${{ github.token }}
@@ -62,6 +64,14 @@ jobs:
         run: docker build -t knightfortheright/mytest:v4 .
       - name: Manifest Generation
         run: |
+          export BILLY_SERVER=https://billy.codesec.aquasec.com
+          export BILLY_SERVER=https://billy.codesec.aquasec.com
+          export TRIVY_USERNAME=${{ secrets.TRIVY_USERNAME }}
+          export TRIVY_PASSWORD=${{ secrets.TRIVY_PASSWORD }}
+          export TRIVY_DB_REPOSITORY="registry.aquasec.com/trivy-db:2"
+          export TRIVY_JAVA_DB_REPOSITORY="registry.aquasec.com/trivy-java-db:1"
+          export TRIVY_CHECKS_BUNDLE_REPOSITORY="registry.aquasec.com/trivy-checks:1"
+          export TRIVY_QUIET=true
           export BILLY_SERVER=https://billy.codesec.aquasec.com
           curl -sLo install.sh download.codesec.aquasec.com/billy/install.sh
           curl -sLo install.sh.checksum https://github.com/argonsecurity/releases/releases/latest/download/install.sh.checksum
